@@ -22,7 +22,7 @@ public abstract class Spaceship : MonoBehaviour
   /// <summary>
   /// 初期化処理
   /// </summary>
-  protected void Initialize()
+  virtual protected void Initialize()
   {
     animator = GetComponent<Animator>();
     rigid2d = GetComponent<Rigidbody2D>();

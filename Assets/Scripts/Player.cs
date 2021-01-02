@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Player : Spaceship
 {
+  [SerializeField]
+  RectTransform fieldRectTransform = default;
+
   void Start()
   {
     Initialize();
@@ -15,6 +18,12 @@ public class Player : Spaceship
     float y = Input.GetAxisRaw("Vertical");
     Vector2 direction = new Vector2(x, y).normalized;
     Move(direction);
+  }
+
+  override protected void Initialize()
+  {
+    base.Initialize();
+    fieldRectTransform = GameObject.Find("GameField").GetComponent<RectTransform>();
   }
 
   IEnumerator Shot()
@@ -35,8 +44,10 @@ public class Player : Spaceship
   /// </summary>
   void Move(Vector2 direction)
   {
-    Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-    Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+    var corners = new Vector3[4];
+    fieldRectTransform.GetWorldCorners(corners);
+    var min = corners[0];
+    var max = corners[2];
     Vector2 pos = transform.position;
     pos += direction * speed * Time.deltaTime;
     pos.x = Mathf.Clamp(pos.x, min.x, max.x);
