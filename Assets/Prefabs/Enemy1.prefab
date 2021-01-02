@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1877270729953208055}
   - component: {fileID: 7182727665007625056}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7807186685265115717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 184197619
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6063193139565258881, guid: 794fac9aa3d546e49912c8a97ea466d4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3d1ad2e1e6f2c544da9b70f2ba4aa176, type: 3}
+  m_Color: {r: 0.8867924, g: 0.7575379, b: 0.6148985, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -141,8 +141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   shotDelay: 0.5
-  bullet: {fileID: 6624504158421245882, guid: 361bfea991564284388dc6fc542fcef1, type: 3}
-  explosion: {fileID: 7915728138140713359, guid: 50ae146f68a51054a80e67a9e846c76b, type: 3}
+  bullet: {fileID: 7432296810981260821, guid: 0406a402c21cc1e409430d44a0921d48, type: 3}
+  explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
   hp: 1
   point: 100
 --- !u!60 &1877270729953208055
@@ -162,7 +162,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.96}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.96, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -170,14 +170,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.122399315, y: 0.27439517}
-      - {x: -0.13416477, y: 0.2693664}
-      - {x: -0.23575093, y: 0.17772496}
-      - {x: -0.26239914, y: -0.15919356}
-      - {x: -0.120158345, y: -0.29225963}
-      - {x: 0.13234156, y: -0.2924568}
-      - {x: 0.26994243, y: -0.14982717}
-      - {x: 0.24228409, y: 0.19165035}
+    - - {x: 0.44678655, y: 0.39544526}
+      - {x: -0.43412042, y: 0.39851412}
+      - {x: -0.55237085, y: 0.065241575}
+      - {x: -0.26656517, y: -0.44665104}
+      - {x: 0.017321348, y: -0.6213777}
+      - {x: 0.29561538, y: -0.3977079}
+      - {x: 0.5547379, y: 0.054170668}
 --- !u!114 &7182727665007625056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,4 +191,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   shotDelay: 1.5
-  bullet: {fileID: 6624504158421245882, guid: 361bfea991564284388dc6fc542fcef1, type: 3}
+  bullet: {fileID: 7432296810981260821, guid: 0406a402c21cc1e409430d44a0921d48, type: 3}

@@ -141,8 +141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   shotDelay: 0.5
-  bullet: {fileID: 6624504158421245882, guid: 361bfea991564284388dc6fc542fcef1, type: 3}
-  explosion: {fileID: 7915728138140713359, guid: 50ae146f68a51054a80e67a9e846c76b, type: 3}
+  bullet: {fileID: 7432296810981260821, guid: 0406a402c21cc1e409430d44a0921d48, type: 3}
+  explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
   hp: 1
   point: 100
 --- !u!114 &3246279587908123522
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   shotDelay: 2
-  bullet: {fileID: 6624504158421245882, guid: 361bfea991564284388dc6fc542fcef1, type: 3}
+  bullet: {fileID: 7432296810981260821, guid: 0406a402c21cc1e409430d44a0921d48, type: 3}
 --- !u!61 &2208009424117995636
 BoxCollider2D:
   m_ObjectHideFlags: 0
