@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Manager : SingletonMonoBehaviour<Manager>
 {
@@ -7,7 +8,9 @@ public class Manager : SingletonMonoBehaviour<Manager>
 
   GameObject title;
 
-  GameObject objectField;
+  GameObject playerObjectField;
+
+  GameObject enemyObjectField;
 
   public Transform p1;
 
@@ -17,7 +20,7 @@ public class Manager : SingletonMonoBehaviour<Manager>
     {
       return;
     }
-    objectField = new GameObject("ObjectField");
+    InitializeField();
   }
 
   void Start()
@@ -36,10 +39,25 @@ public class Manager : SingletonMonoBehaviour<Manager>
 
   void Initialize()
   {
-    Destroy(objectField);
-    objectField = new GameObject("ObjectField");
+    InitializeField();
     BackgroundManager.Instance.Initialize();
-    EnemyEmitter.Instance.Initialize(objectField);
+    EnemyEmitter.Instance.Initialize(enemyObjectField);
+  }
+
+  void InitializeField()
+  {
+    if (playerObjectField)
+    {
+      Destroy(playerObjectField);
+    }
+
+    if (enemyObjectField)
+    {
+      Destroy(enemyObjectField);
+    }
+
+    playerObjectField = new GameObject("PlayerObjectField");
+    enemyObjectField = new GameObject("EnemyObjectField");
   }
 
   void GameStart()
@@ -47,11 +65,33 @@ public class Manager : SingletonMonoBehaviour<Manager>
     title.SetActive(false);
 
     var obj = Instantiate(player, player.transform.position, player.transform.rotation);
-    obj.transform.SetParent(objectField.transform);
+    obj.transform.SetParent(playerObjectField.transform);
 
     p1 = obj.transform;
 
-    StartCoroutine(EnemyEmitter.Instance.Loop());
+    StartCoroutine(EmitEnemies());
+  }
+
+  IEnumerator EmitEnemies()
+  {
+    yield return StartCoroutine(EnemyEmitter.Instance.Loop());
+    BackgroundManager.Instance.Stop();
+    yield return StartCoroutine(WaitUntilEnemiesDisposed());
+    GameOver();
+  }
+
+  IEnumerator WaitUntilEnemiesDisposed()
+  {
+    GameObject emitField = EnemyEmitter.Instance.GetEmitField();
+
+    while (IsPlaying())
+    {
+      if (emitField.transform.childCount == 0)
+      {
+        yield break;
+      }
+      yield return new WaitForEndOfFrame();
+    }
   }
 
   public void GameOver()

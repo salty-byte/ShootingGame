@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+
   [SerializeField]
   float speed = 10f;
 
   [SerializeField]
   float shotDelay = 1f;
+
+  [SerializeField]
+  float shotStartOffset = 0f;
 
   [SerializeField]
   GameObject bullet = default;
@@ -27,6 +31,8 @@ public class Weapon : MonoBehaviour
 
   public IEnumerator Shot()
   {
+    yield return new WaitForSeconds(shotStartOffset);
+
     while (target != null && transform != null)
     {
       var obj = Instantiate(bullet, transform);

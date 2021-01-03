@@ -74,6 +74,7 @@ public class EnemyEmitter : SingletonMonoBehaviour<EnemyEmitter>
       new EmitItem(1, Direction.LEFT, 32.5f, 0.8f, hp: 8, point: 100, moveType: 5),
       new EmitItem(1, Direction.UP, 34.0f, 0.7f, hp: 8, point: 100, moveType: 3),
       new EmitItem(1, Direction.RIGHT, 35.0f, 0.9f, hp: 8, point: 100, moveType: 5),
+      new EmitItem(2, Direction.UP, 40.0f, 0.5f, hp: 100, point: 1000),
     };
 
     time = 0f;
@@ -84,7 +85,7 @@ public class EnemyEmitter : SingletonMonoBehaviour<EnemyEmitter>
   {
     isPlaying = true;
 
-    while (isPlaying)
+    while (isPlaying && index < items.Length)
     {
       time += Time.deltaTime;
 
@@ -132,5 +133,10 @@ public class EnemyEmitter : SingletonMonoBehaviour<EnemyEmitter>
     var enemy = obj.GetComponent<Enemy>();
     enemy.Hp = item.hp;
     enemy.Point = item.point;
+  }
+
+  public GameObject GetEmitField()
+  {
+    return objectField;
   }
 }
