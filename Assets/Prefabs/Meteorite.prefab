@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 6279106442108557033}
   - component: {fileID: 6279106442108557014}
   - component: {fileID: 6279106442108557015}
-  m_Layer: 0
+  - component: {fileID: 6962416566723328666}
+  - component: {fileID: 1360208380690455823}
+  - component: {fileID: 3990166377828840206}
+  m_Layer: 9
   m_Name: Meteorite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,3 +105,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &6962416566723328666
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279106442108557012}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1360208380690455823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279106442108557012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc50230c8d2b18b45bcc2b1cf42ec034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  shotDelay: 0
+  bullet: {fileID: 0}
+  explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
+  hp: 10
+  point: 100
+--- !u!58 &3990166377828840206
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279106442108557012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.01535666, y: -0.0209409}
+  serializedVersion: 2
+  m_Radius: 0.5729891

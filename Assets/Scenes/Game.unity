@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c57bd584ac3b04a8c1797717b41c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
+  speed: 0.02
 --- !u!64 &128792820
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   enemyObjects:
   - {fileID: 2520753799201096359, guid: 15b91b3d24885ec4fb4e73e72073ec32, type: 3}
   - {fileID: 7807186685265115717, guid: e9c1427d93121334fbc88deac06f4e6b, type: 3}
-  - {fileID: 7807186685265115717, guid: e9c1427d93121334fbc88deac06f4e6b, type: 3}
+  - {fileID: 1286779720032963432, guid: bc1ad92f632e7e74ab93971c7d52b215, type: 3}
   fieldRectTransform: {fileID: 1810316049}
 --- !u!1 &1310142938
 GameObject:
