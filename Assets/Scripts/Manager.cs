@@ -41,6 +41,7 @@ public class Manager : SingletonMonoBehaviour<Manager>
   {
     InitializeField();
     BackgroundManager.Instance.Initialize();
+    Score.Instance.Initialize();
     EnemyEmitter.Instance.Initialize(enemyObjectField);
   }
 

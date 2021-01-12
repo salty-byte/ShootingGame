@@ -31,7 +31,7 @@ public class Score : SingletonMonoBehaviour<Score>
     highScoreText.text = $"HighScore : {highScore}";
   }
 
-  void Initialize()
+  public void Initialize()
   {
     score = 0;
     highScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0);
@@ -46,6 +46,5 @@ public class Score : SingletonMonoBehaviour<Score>
   {
     PlayerPrefs.SetInt(HIGH_SCORE_KEY, highScore);
     PlayerPrefs.Save();
-    Initialize();
   }
 }
