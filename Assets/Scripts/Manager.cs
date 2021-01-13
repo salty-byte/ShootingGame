@@ -65,9 +65,7 @@ public class Manager : SingletonMonoBehaviour<Manager>
   {
     title.SetActive(false);
 
-    var obj = Instantiate(player, player.transform.position, player.transform.rotation);
-    obj.transform.SetParent(playerObjectField.transform);
-
+    var obj = Instantiate(player, playerObjectField.transform);
     p1 = obj.transform;
 
     StartCoroutine(EmitEnemies());

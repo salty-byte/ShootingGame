@@ -41,7 +41,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     DontDestroyOnLoad(this.gameObject);
 
     // bgm
-    bgmSource = gameObject.AddComponent<AudioSource>() as AudioSource;
+    bgmSource = gameObject.AddComponent<AudioSource>();
     bgmSource.playOnAwake = false;
     bgmSource.loop = true;
     bgmSource.volume = PlayerPrefs.GetFloat(BGM_VOLUME_KEY, BGM_VOLUME_DEFULT);
@@ -50,7 +50,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     seSources = new List<AudioSource>();
     foreach (var _ in Enumerable.Range(0, SE_SOURCE_NUM))
     {
-      var s = gameObject.AddComponent<AudioSource>() as AudioSource;
+      var s = gameObject.AddComponent<AudioSource>();
       s.playOnAwake = false;
       s.loop = false;
       s.volume = PlayerPrefs.GetFloat(SE_VOLUME_KEY, SE_VOLUME_DEFULT);
@@ -60,10 +60,10 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     // リソースフォルダから全SE&BGMのファイルを読み込みセット
     bgmDict = new Dictionary<string, AudioClip>();
     seDict = new Dictionary<string, AudioClip>();
-    var bgmList = Resources.LoadAll(BGM_PATH);
-    var seList = Resources.LoadAll(SE_PATH);
-    Array.ForEach(bgmList, v => bgmDict[v.name] = v as AudioClip);
-    Array.ForEach(seList, v => seDict[v.name] = v as AudioClip);
+    var bgmList = Resources.LoadAll<AudioClip>(BGM_PATH);
+    var seList = Resources.LoadAll<AudioClip>(SE_PATH);
+    Array.ForEach(bgmList, v => bgmDict[v.name] = v);
+    Array.ForEach(seList, v => seDict[v.name] = v);
   }
 
   /// <summary>

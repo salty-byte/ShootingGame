@@ -28,16 +28,16 @@ public class Enemy : Spaceship
   /// </summary>
   void OnTriggerEnter2D(Collider2D c)
   {
-    string layerName = LayerMask.LayerToName(c.gameObject.layer);
-    if (layerName != "Bullet (Player)") return;
-
-    Transform playerBulletTransform = c.transform.parent;
-    Bullet bullet = playerBulletTransform.GetComponent<Bullet>();
-
-    hp -= bullet.power;
+    var layerName = LayerMask.LayerToName(c.gameObject.layer);
+    if (layerName != "Bullet (Player)")
+    {
+      return;
+    }
 
     Destroy(c.gameObject);
 
+    var bullet = c.transform.GetComponent<Bullet>();
+    hp -= bullet.Power;
     if (hp <= 0)
     {
       Score.Instance.AddPoint(point);

@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce367faf9800e049b65a7f74f3c1b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
   speed: 3
   shotDelay: 0.1
-  bullet: {fileID: 7750949278550554105, guid: ac45db24effdc474ea235bb28d523828, type: 3}
-  explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
+  bullet: {fileID: 7228889783814278453, guid: 71f5a7c0b56eb1f4e81dd5366dfbbbc1, type: 3}
   fieldRectTransform: {fileID: 0}

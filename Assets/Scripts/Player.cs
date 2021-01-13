@@ -4,6 +4,15 @@ using UnityEngine;
 public class Player : Spaceship
 {
   [SerializeField]
+  protected float speed;
+
+  [SerializeField]
+  protected float shotDelay;
+
+  [SerializeField]
+  protected GameObject bullet = default;
+
+  [SerializeField]
   RectTransform fieldRectTransform = default;
 
   void Start()
@@ -30,8 +39,12 @@ public class Player : Spaceship
   {
     while (true)
     {
-      var obj = Instantiate(bullet, transform.position, transform.rotation);
-      obj.transform.SetParent(transform.parent);
+      var obj = Instantiate(
+        bullet,
+        transform.position,
+        transform.rotation,
+        transform.parent
+      );
       obj.GetComponent<Bullet>().SetVelocity(transform.up.normalized);
 
       AudioManager.Instance.PlaySE("shoot");
@@ -46,8 +59,8 @@ public class Player : Spaceship
   {
     var corners = new Vector3[4];
     fieldRectTransform.GetWorldCorners(corners);
-    var min = corners[0];
-    var max = corners[2];
+    Vector3 min = corners[0];
+    Vector3 max = corners[2];
     Vector2 pos = transform.position;
     pos += direction * speed * Time.deltaTime;
     pos.x = Mathf.Clamp(pos.x, min.x, max.x);

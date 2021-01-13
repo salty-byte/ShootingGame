@@ -32,13 +32,13 @@ public class MoveModels
     float diff = target.position.x > 0 ? -1.0f : 1.0f;
     float midX = target.position.x + diff;
     float midcX = target.position.x + (diff / 2);
-    Vector3 mid = new Vector3(midX, 0f);
-    Vector3 midControl = new Vector3(midcX, -4f);
+    var mid = new Vector3(midX, 0f);
+    var midControl = new Vector3(midcX, -4f);
 
     float toX = target.position.x + (diff * 2);
     float tocX = target.position.x + (diff * 3 / 2);
-    Vector3 to = new Vector3(toX, -target.position.y);
-    Vector3 toControl = new Vector3(tocX, 4f);
+    var to = new Vector3(toX, -target.position.y);
+    var toControl = new Vector3(tocX, 4f);
 
     return new MoveSequence(target)
       .AppendMoveBezier(mid, midControl, 3.5f)
@@ -51,13 +51,13 @@ public class MoveModels
     float diff = target.position.x > 0 ? -2.0f : 2.0f;
     float midX = target.position.x + diff;
     float midcX = target.position.x + (diff / 2);
-    Vector3 mid = new Vector3(midX, 0f);
-    Vector3 midControl = new Vector3(midcX, -3f);
+    var mid = new Vector3(midX, 0f);
+    var midControl = new Vector3(midcX, -3f);
 
     float toX = target.position.x + (diff * 2);
     float tocX = target.position.x + (diff * 3 / 2);
-    Vector3 to = new Vector3(toX, -target.position.y);
-    Vector3 toControl = new Vector3(tocX, 3f);
+    var to = new Vector3(toX, -target.position.y);
+    var toControl = new Vector3(tocX, 3f);
 
     return new MoveSequence(target)
       .AppendMoveBezier(mid, midControl, 3f)
@@ -68,7 +68,7 @@ public class MoveModels
   static MoveSequence Move04(Transform target)
   {
     Vector3 to = target.position;
-    Vector3 toControl = new Vector3(to.x, -4f);
+    var toControl = new Vector3(to.x, -4f);
 
     return new MoveSequence(target)
       .AppendMoveBezier(to, toControl, 3f)
@@ -80,7 +80,7 @@ public class MoveModels
     Vector3 to = target.position;
     float sign = Mathf.Sign(to.x);
     to.x += 1f * sign;
-    Vector3 toControl = new Vector3(-6f * sign, to.y - 3f);
+    var toControl = new Vector3(-6f * sign, to.y - 3f);
 
     return new MoveSequence(target)
       .AppendMoveBezier(to, toControl, 5f);

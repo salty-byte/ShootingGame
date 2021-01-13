@@ -1,5 +1,6 @@
-﻿public enum MoveStatus {
-    WAITING,
-    MOVING,
-    FINISHED,
-  }
+﻿public enum MoveStatus
+{
+  WAITING,
+  MOVING,
+  FINISHED,
+}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 508066197}
   - component: {fileID: 508066196}
   - component: {fileID: 1877270729953208055}
-  - component: {fileID: 7182727665007625056}
+  - component: {fileID: 6015710067258730915}
   m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
@@ -139,9 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50230c8d2b18b45bcc2b1cf42ec034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  shotDelay: 0.5
-  bullet: {fileID: 7432296810981260821, guid: 0406a402c21cc1e409430d44a0921d48, type: 3}
   explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
   hp: 1
   point: 100
@@ -177,7 +174,7 @@ PolygonCollider2D:
       - {x: 0.017321348, y: -0.6213777}
       - {x: 0.29561538, y: -0.3977079}
       - {x: 0.5547379, y: 0.054170668}
---- !u!114 &7182727665007625056
+--- !u!114 &6015710067258730915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,9 +183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7807186685265115717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e6535df5938d74fb5ca60b1a1b9a9d, type: 3}
+  m_Script: {fileID: 11500000, guid: a8bb655bfafd4914faa1c9c8b840eaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
   shotDelay: 1.5
+  shotStartOffset: 0.1
   bullet: {fileID: 7432296810981260821, guid: 0406a402c21cc1e409430d44a0921d48, type: 3}

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8849951862491908062}
   - component: {fileID: 3626237085126231523}
   - component: {fileID: -7188402173877689742}
-  - component: {fileID: 1839050452238316343}
   - component: {fileID: 1670576429281654569}
+  - component: {fileID: 4926002114116014919}
   m_Layer: 11
-  m_Name: EnemyBullet 1
+  m_Name: EnemyBullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7432296810981260821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,20 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1839050452238316343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7432296810981260821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad28db32c79aca349a0a29a922bf0828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  power: 1
 --- !u!58 &1670576429281654569
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +122,17 @@ CircleCollider2D:
   m_Offset: {x: -0.004684806, y: 0}
   serializedVersion: 2
   m_Radius: 0.21720636
+--- !u!114 &4926002114116014919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7432296810981260821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7249cbee99a1f7b489c2eb325c2c084d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  power: 1

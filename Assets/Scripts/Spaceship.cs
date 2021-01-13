@@ -4,15 +4,6 @@
 public abstract class Spaceship : MonoBehaviour
 {
   [SerializeField]
-  protected float speed;
-
-  [SerializeField]
-  protected float shotDelay;
-
-  [SerializeField]
-  protected GameObject bullet = default;
-
-  [SerializeField]
   GameObject explosion = default;
 
   public Animator animator { get; private set; }
@@ -33,7 +24,11 @@ public abstract class Spaceship : MonoBehaviour
   /// </summary>
   protected void Explosion()
   {
-    var obj = Instantiate(explosion, transform.position, transform.rotation);
-    obj.transform.SetParent(transform.parent);
+    Instantiate(
+      explosion,
+      transform.position,
+      transform.rotation,
+      transform.parent
+    );
   }
 }

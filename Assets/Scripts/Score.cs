@@ -3,6 +3,8 @@ using TMPro;
 
 public class Score : SingletonMonoBehaviour<Score>
 {
+  const string HIGH_SCORE_KEY = "highScore";
+
   [SerializeField]
   TextMeshProUGUI scoreText = default;
 
@@ -13,8 +15,6 @@ public class Score : SingletonMonoBehaviour<Score>
 
   int highScore;
 
-  const string HIGH_SCORE_KEY = "highScore";
-
   void Start()
   {
     Initialize();
@@ -22,11 +22,7 @@ public class Score : SingletonMonoBehaviour<Score>
 
   void Update()
   {
-    if (highScore < score)
-    {
-      highScore = score;
-    }
-
+    highScore = Mathf.Max(highScore, score);
     scoreText.text = score.ToString();
     highScoreText.text = $"HighScore : {highScore}";
   }

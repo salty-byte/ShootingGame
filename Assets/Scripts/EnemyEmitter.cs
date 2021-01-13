@@ -89,7 +89,7 @@ public class EnemyEmitter : SingletonMonoBehaviour<EnemyEmitter>
     {
       time += Time.deltaTime;
 
-      while (index < items.Length && items[index].time <= time)
+      while (index < items.Length && items[index].Time <= time)
       {
         Emit(items[index]);
         index++;
@@ -103,36 +103,40 @@ public class EnemyEmitter : SingletonMonoBehaviour<EnemyEmitter>
   {
     var corners = new Vector3[4];
     fieldRectTransform.GetWorldCorners(corners);
-    var min = corners[0];
-    var max = corners[2];
+    Vector3 min = corners[0];
+    Vector3 max = corners[2];
     var position = new Vector3(0, 0, 0);
 
-    switch (item.direction)
+    switch (item.Direction)
     {
       case Direction.DOWN:
-        position.x = Mathf.Lerp(min.x, max.x, item.position);
+        position.x = Mathf.Lerp(min.x, max.x, item.Position);
         position.y = min.y;
         break;
       case Direction.LEFT:
         position.x = min.x;
-        position.y = Mathf.Lerp(min.y, max.y, item.position);
+        position.y = Mathf.Lerp(min.y, max.y, item.Position);
         break;
       case Direction.RIGHT:
         position.x = max.x;
-        position.y = Mathf.Lerp(min.y, max.y, item.position);
+        position.y = Mathf.Lerp(min.y, max.y, item.Position);
         break;
       default:
-        position.x = Mathf.Lerp(min.x, max.x, item.position);
+        position.x = Mathf.Lerp(min.x, max.x, item.Position);
         position.y = max.y;
         break;
     }
 
-    var obj = Instantiate(enemyObjects[item.enemyId], position, transform.rotation);
-    obj.transform.SetParent(objectField.transform);
-    moveManager.AppendSequence(MoveModels.Create(obj.transform, item.moveType));
+    var obj = Instantiate(
+      enemyObjects[item.EnemyId],
+      position,
+      transform.rotation,
+      objectField.transform
+    );
+    moveManager.AppendSequence(MoveModels.Create(obj.transform, item.MoveType));
     var enemy = obj.GetComponent<Enemy>();
-    enemy.Hp = item.hp;
-    enemy.Point = item.point;
+    enemy.Hp = item.Hp;
+    enemy.Point = item.Point;
   }
 
   public GameObject GetEmitField()

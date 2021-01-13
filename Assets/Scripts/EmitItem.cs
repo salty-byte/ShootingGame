@@ -1,22 +1,22 @@
 ﻿public class EmitItem
 {
-  public int enemyId { get; private set; }
+  public int EnemyId { get; private set; }
 
-  public EnemyEmitter.Direction direction { get; private set; }
+  public EnemyEmitter.Direction Direction { get; private set; }
 
-  public int hp { get; private set; }
+  public int Hp { get; private set; }
 
-  public int point { get; private set; }
+  public int Point { get; private set; }
 
-  public float position { get; private set; }
+  public float Position { get; private set; }
 
-  public float rotation { get; private set; }
+  public float Rotation { get; private set; }
 
-  public float scale { get; private set; }
+  public float Scale { get; private set; }
 
-  public float time { get; private set; }
+  public float Time { get; private set; }
 
-  public int moveType { get; private set; }
+  public int MoveType { get; private set; }
 
   public EmitItem(
     int id,
@@ -30,14 +30,14 @@
     int point = 100
   )
   {
-    this.enemyId = id;
-    this.direction = direction;
-    this.time = time;
-    this.position = position;
-    this.rotation = rotation;
-    this.scale = scale;
-    this.moveType = moveType;
-    this.hp = hp;
-    this.point = point;
+    this.EnemyId = id;
+    this.Direction = direction;
+    this.Time = time;
+    this.Position = position;
+    this.Rotation = rotation;
+    this.Scale = scale;
+    this.MoveType = moveType;
+    this.Hp = hp;
+    this.Point = point;
   }
 }
