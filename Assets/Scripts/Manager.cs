@@ -25,7 +25,7 @@ public class Manager : SingletonMonoBehaviour<Manager>
 
   void Start()
   {
-    title = GameObject.Find("Title");
+    title = GameObject.Find("MainPanel/Title");
   }
 
   void Update()
