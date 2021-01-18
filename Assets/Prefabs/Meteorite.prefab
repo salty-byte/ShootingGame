@@ -138,9 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50230c8d2b18b45bcc2b1cf42ec034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  shotDelay: 0
-  bullet: {fileID: 0}
   explosion: {fileID: 8011969135489023627, guid: a4347c808ac998b46a93e37344bf42ab, type: 3}
   hp: 10
   point: 100
