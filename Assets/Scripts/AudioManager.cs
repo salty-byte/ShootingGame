@@ -11,7 +11,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
   const string BGM_VOLUME_KEY = "bgmvolume";
   const string SE_VOLUME_KEY = "sevolume";
   const float BGM_VOLUME_DEFULT = 0.5f;
-  const float SE_VOLUME_DEFULT = 0.5f;
+  const float SE_VOLUME_DEFULT = 0.4f;
 
   const string BGM_PATH = "Sounds/BGM";
   const string SE_PATH = "Sounds/SE";

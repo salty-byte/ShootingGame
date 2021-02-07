@@ -39,6 +39,7 @@ public class Manager : SingletonMonoBehaviour<Manager>
 
   void Initialize()
   {
+    AudioManager.Instance.StopBGM();
     InitializeField();
     BackgroundManager.Instance.Initialize();
     Score.Instance.Initialize();
@@ -64,6 +65,7 @@ public class Manager : SingletonMonoBehaviour<Manager>
   void GameStart()
   {
     title.SetActive(false);
+    AudioManager.Instance.PlayBGM("stage1");
 
     var obj = Instantiate(player, playerObjectField.transform);
     p1 = obj.transform;
