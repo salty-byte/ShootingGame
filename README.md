@@ -14,6 +14,8 @@ Unity で作っている 2D シューティングゲームです。
 
 - プレイ画面
 
+![playing demo](/Demo/Images/playing01.png)
+
 ## 利用方法
 
 **Windows 10:**
